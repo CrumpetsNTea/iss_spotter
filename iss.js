@@ -14,8 +14,8 @@ const fetchMyIP = (callback) => {
       callback(Error(msg), null); //Error here creates a new Error object that we can pass around
       return;
     }
-    let IP = body;
-    callback(null, IP);
+    const ip = JSON.parse(body).ip;
+    callback(null, ip);
   });
 };
 

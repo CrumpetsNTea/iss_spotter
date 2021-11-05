@@ -49,19 +49,19 @@ const fetchISSFlyOverTimes = function(coords, callback) { //takes the coordinate
 };
 
 const nextISSTimesForMyLocation = (callback) => {
-  fetchMyIP((error, ip) => { //first step calls function and gets ip
+  fetchMyIP((error, ip) => { //first step calls function and gets ip - needs ip to get location
     if (error) {
       return callback(error, null);
     }
-    fetchCoordsByIP(ip, (error, loc) => { //calls function with ip and gets location
+    fetchCoordsByIP(ip, (error, loc) => { //calls function with ip and gets location - needs location to get passes
       if (error) {
         return callback(error, null);
       }
-      fetchISSFlyOverTimes(loc, (error, nextPasses) => { //calls function with location and gets passes
+      fetchISSFlyOverTimes(loc, (error, nextPasses) => { //calls function with location and gets passes - needs passes to format and get final output
         if (error) {
           return callback(error, null);
         }
-        callback(null, nextPasses); //logs next passes (hands it to index)
+        callback(null, nextPasses); //logs next passes (hands it to index to format)
       });
     });
   });

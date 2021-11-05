@@ -21,7 +21,7 @@ fetchMyIP((error, ip) => { //calls to get ip
         console.log("It didn't work!", error);
         return;
       }
-      console.log("It worked! Returned Passes:", pass); 
+      console.log("It worked! Returned Passes:", pass);
       
       const printPassTimes = (passTimes) => { //takes the pass/risetimes and formats them to be readable
         for (const pass of passTimes) { //loops through all the risetimes

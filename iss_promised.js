@@ -4,4 +4,8 @@ const fetchMyIP = () => { //function that grabs an ip that has a callback parame
   return request(`https://api.ipify.org/?format=json`);
 };
 
-module.exports = { fetchMyIP };
+const fetchCoordsByIP = function(body) {
+  const ip = JSON.parse(body).ip;
+  return request(`https://freegeoip.app/json/${ip}`);
+};
+module.exports = { fetchMyIP, fetchCoordsByIP };

@@ -44,6 +44,3 @@ fetchMyIP((error, ip) => { //calls to get ip
 
 
 
-
-
-

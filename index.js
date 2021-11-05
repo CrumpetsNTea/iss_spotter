@@ -15,6 +15,7 @@ fetchMyIP((error, ip) => {
       return;
     }
     console.log("It worked! Returned Coordinates:", coordinates);
+    
     fetchISSFlyOverTimes({ latitude: 44.5698, longitude: -80.9439 }, (error, pass) => {
       if (error) {
         console.log("It didn't work!", error);

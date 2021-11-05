@@ -30,7 +30,6 @@ const fetchCoordsByIP = (ip, callback) => {
     }
     const { latitude, longitude } = JSON.parse(body);
     callback(null, { latitude, longitude });
-    return;
   });
 };
 
@@ -46,7 +45,6 @@ const fetchISSFlyOverTimes = function(coords, callback) {
     }
     const pass = JSON.parse(body).response; //next pass is set to the body of the request
     callback(null, pass);
-    return;
   });
 };
 

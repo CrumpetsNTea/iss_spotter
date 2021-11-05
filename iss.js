@@ -44,11 +44,10 @@ const fetchISSFlyOverTimes = function(coords, callback) {
       callback(Error(`Status Code ${response.statusCode} when fetching ISS pass times: ${body}`), null);
       return;
     }
-    const pass = JSON.parse(body); //next pass is set to the body of the request
+    const pass = JSON.parse(body).response; //next pass is set to the body of the request
     callback(null, pass);
     return;
   });
-
 };
 
 module.exports = { fetchMyIP, fetchCoordsByIP, fetchISSFlyOverTimes };
